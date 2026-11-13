@@ -19,6 +19,9 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 180)]
     private ?string $yes = null;
 
+    #[ORM\Column(length: 180)]
+    private ?string $nome = null;
+
     /**
      * @var list<string> The user roles
      */
