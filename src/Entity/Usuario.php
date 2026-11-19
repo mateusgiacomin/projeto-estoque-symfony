@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UsuarioRepository::class)]
-#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_YES', fields: ['yes'])]
+#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
 class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -17,11 +17,8 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
-    private ?string $yes = null;
-
-    #[ORM\Column(length: 180)]
-    private ?string $nome = null;
-
+    private ?string $email = null;
+   
     /**
      * @var list<string> The user roles
      */
@@ -39,14 +36,14 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->id;
     }
 
-    public function getYes(): ?string
+    public function getEmail(): ?string
     {
-        return $this->yes;
+        return $this->email;
     }
 
-    public function setYes(string $yes): static
+    public function setEmail(string $email): static
     {
-        $this->yes = $yes;
+        $this->email = $email;
 
         return $this;
     }
@@ -58,7 +55,7 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->yes;
+        return (string) $this->email;
     }
 
     /**

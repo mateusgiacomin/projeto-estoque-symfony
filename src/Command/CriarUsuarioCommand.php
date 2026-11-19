@@ -22,7 +22,6 @@ class CriarUsuarioCommand
     SymfonyStyle $io,
     #[Argument('Email')] string $email,
     #[Argument('Senha')] string $senha,
-    #[Argument('Nome')] string $nome,
   ): int {
     $usuario = new Usuario();
     $usuario->setEmail($email);
