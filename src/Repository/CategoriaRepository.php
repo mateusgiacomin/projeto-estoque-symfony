@@ -16,6 +16,12 @@ class CategoriaRepository extends ServiceEntityRepository
         parent::__construct($registry, Categoria::class);
     }
 
+        public function salvar(Categoria $categoria): void
+    {
+        $this->getEntityManager()->persist($categoria);
+        $this->getEntityManager()->flush();
+    }
+
 //    /**
 //     * @return Categoria[] Returns an array of Categoria objects
 //     */
