@@ -1,0 +1,13 @@
+{% extends 'app/base.html.twig' %}
+
+{% block title %}Editar categoria{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Editar categoria</h1>
+
+    {% include 'app/categoria/_form.html.twig' with {
+        acao: path('editar_categoria_salvar', {id: categoria.id}),
+        botao: 'Salvar',
+        nome: categoria.nome
+    } %}
+{% endblock %}

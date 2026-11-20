@@ -1,0 +1,8 @@
+<form action="{{ acao }}" method="post" style="max-width: 480px;">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" value="{{ nome|default('') }}" minlength="3" maxlength="50" required>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ botao }}</button>
+    <a href="{{ path('listar_categorias') }}" class="btn btn-link">Cancelar</a>
+</form>
