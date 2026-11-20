@@ -1,0 +1,46 @@
+{% if erros|default([]) %}
+    <div class="alert alert-danger" role="alert" style="max-width: 560px;">
+        <ul class="mb-0">
+            {% for erro in erros %}
+                <li>{{ erro }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+<form action="{{ acao }}" method="post" style="max-width: 560px;">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" value="{{ dados.nome|default('') }}" maxlength="100" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <textarea class="form-control" id="descricao" name="descricao" rows="3">{{ dados.descricao|default('') }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="categoria" class="form-label">Categoria</label>
+        <select class="form-select" id="categoria" name="categoria" required>
+            <option value="">Selecione...</option>
+            {% for categoria in categorias %}
+                <option value="{{ categoria.id }}"{% if (dados.categoria|default('')) == categoria.id %} selected{% endif %}>{{ categoria.nome }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="valor" class="form-label">Valor (R$)</label>
+        <input type="number" class="form-control" id="valor" name="valor" value="{{ dados.valor|default('') }}" min="0" step="0.01" required>
+    </div>
+
+    {% if comQuantidade %}
+        <div class="mb-3">
+            <label for="quantidade" class="form-label">Quantidade</label>
+            <input type="number" class="form-control" id="quantidade" name="quantidade" value="{{ dados.quantidade|default('') }}" min="0" step="1" required>
+        </div>
+    {% endif %}
+
+    <button type="submit" class="btn btn-primary">{{ botao }}</button>
+    <a href="{{ path('listar_produtos') }}" class="btn btn-link">Cancelar</a>
+</form>

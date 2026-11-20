@@ -4,6 +4,7 @@ namespace App\Controller\Categoria;
 
 use App\Entity\Categoria;
 use App\Repository\CategoriaRepository;
+use App\Repository\ProdutoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,6 +14,7 @@ class RemoverController extends AbstractController
 {
     public function __construct(
         private CategoriaRepository $categoriaRepository,
+        private ProdutoRepository $produtoRepository,
     ) {
     }
 
@@ -27,6 +29,14 @@ class RemoverController extends AbstractController
         }
 
         $nome = $categoria->getNome();
+
+        $total = $this->produtoRepository->count(['categoria' => $categoria]);
+        if ($total > 0) {
+            $this->addFlash('danger', "Não é possível remover \"{$nome}\": existem {$total} produto(s) nessa categoria.");
+
+            return $this->redirectToRoute('listar_categorias');
+        }
+
         $this->categoriaRepository->remover($categoria);
 
         $this->addFlash('success', "Categoria \"{$nome}\" removida com sucesso!");

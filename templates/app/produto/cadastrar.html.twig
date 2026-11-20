@@ -1,0 +1,20 @@
+{% extends 'app/base.html.twig' %}
+
+{% block title %}Novo produto{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Novo produto</h1>
+
+    {% if categorias is empty %}
+        <div class="alert alert-warning" style="max-width: 560px;">
+            Cadastre pelo menos uma categoria antes de cadastrar produtos.
+            <a href="{{ path('cadastrar_categoria_show') }}" class="alert-link">Nova categoria</a>
+        </div>
+    {% else %}
+        {% include 'app/produto/_form.html.twig' with {
+            acao: path('cadastrar_produto_salvar'),
+            botao: 'Cadastrar',
+            comQuantidade: true
+        } %}
+    {% endif %}
+{% endblock %}
