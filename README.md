@@ -1,14 +1,14 @@
 LOGIN
-<img width="1920" height="1044" alt="image" src="https://github.com/user-attachments/assets/85070945-5db1-451b-8ab5-d0ae35e1f9c3" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2b0008fd-a4d0-49d2-9807-f98cc6431150" />
 
 PAINEL
-<img width="1920" height="1044" alt="image" src="https://github.com/user-attachments/assets/d5e9d9cf-b2b5-4f70-9f8c-59fd671cad45" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/64de3f8e-8edd-4e34-ab19-e5c12b8bbaea" />
 
 CATEGORIAS
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7d944a37-be84-443e-8159-307774e0f5f0" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ce53d086-3b19-42b0-af1a-369f5ee07056" />
 
 PRODUTOS
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/050fad3a-75cb-40f3-a3ad-20a459e4c6e5" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ca0b0084-5e72-4724-b898-e5c4f64a57fd" />
 
 CADASTRO
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0864ce20-8fd7-49a9-b420-a7e61b34ce79" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7296993c-95f4-4b7f-bf43-e37c7a7f63ba" />
